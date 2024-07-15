@@ -12,6 +12,7 @@ const ownerSchema = mongoose.Schema({
         default : [],
     },
     picture : String,
+    gstin : String,
 
 },{
     timestamps  :true,
