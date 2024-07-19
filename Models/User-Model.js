@@ -9,7 +9,6 @@ const userSchema = mongoose.Schema({
         type : Array,
         default : [],
     },
-    admin : Boolean,
     order : {
         type : Array,
         default : [],

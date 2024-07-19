@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../StyleSheet/Style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container p-2">
+      <!-- logo -->
+      <div>
+        <h2 class="text-2xl text-blue-600 font-bold">Posh Shop</h2>
+      </div>
+      <!-- body section -->
+      <div
+        class="flex justify-center gap-16 w-full items-center min-h-screen max-lg:flex-col"
+      >
+        <!-- registration side -->
+        <div
+          class="registration-side w-[48%] flex flex-col pl-24 max-lg:pl-0 max-lg:w-[70%]"
+        >
+          <div class="heading">
+            <!-- registration heading -->
+            <h2
+              class="text-2xl font-medium max-lg:text-base max-lg:flex max-lg:justify-center"
+            >
+              Welcome to <span class="text-blue-600 font-bold">Posh Shop</span>
+            </h2>
+            <h4
+              class="text-xl font-semibold max-lg:text-base max-lg:flex max-lg:justify-center"
+            >
+              create your account
+            </h4>
+            <!-- registration form -->
+            <form action="/register" method="post">
+              <div class="mt-2">
+                <input
+                  type="text"
+                  name="full name"
+                  autocomplete="family-name"
+                  placeholder="Full name"
+                  class="w-full rounded-md bg-gray-100  p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
+                />
+              </div>
+              <div class="mt-2">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  autocomplete="email"
+                  class="w-full rounded-md bg-gray-100 p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
+                />
+              </div>
+              <div class="mt-2">
+                <input
+                  type="password"
+                  name="password"
+                  autocomplete="family-name"
+                  placeholder="Password"
+                  class="w-full rounded-md bg-gray-100 p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
+                />
+              </div>
+              <!-- registration button -->
+              <div class="mt-2 max-lg:flex max-lg:justify-center">
+                <button
+                  type="submit"
+                  class="rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Create my account
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- center of section -->
+        <div class="flex justify-center items-center">
+          <h2
+            class="bg-blue-600 p-3 rounded-3xl text-white text-xl font-semibold"
+          >
+            OR
+          </h2>
+        </div>
+        <!-- body login section -->
+        <div class="loging-side w-[48%] pr-24 max-lg:pr-0 max-lg:w-[70%]">
+          <div class="heading">
+            <!-- login heading -->
+            <h2
+              class="font-semibold text-xl max-lg:text-base max-lg:flex max-lg:justify-center"
+            >
+              Login Your Account
+            </h2>
+            <!-- login form -->
+            <form action="">
+              <div class="mt-2">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  autocomplete="email"
+                  class="w-full bg-gray-100 rounded-md p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
+                />
+              </div>
+              <div class="mt-2">
+                <input
+                  type="password"
+                  name="password"
+                  autocomplete="family-name"
+                  placeholder="Password"
+                  class="w-full rounded-md bg-gray-100 p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
+                />
+              </div>
+              <!-- login button -->
+              <div class="mt-2 max-lg:flex max-lg:justify-center">
+                <button
+                  type="submit"
+                  class="rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

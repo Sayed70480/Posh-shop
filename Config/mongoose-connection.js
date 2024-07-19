@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/Posh-shop")
+const config = require("config");
+// const dbgr = require("debug")("development:mongoose");
+
+mongoose.connect(`${config.get("MONGOODB_URL")}/Posh-shop`)
 .then(function(){
-    console.log("connected");
+    console.log();("connected");
 
 })
 .catch(function(err){
-    console.log(err);
+    console.log();(err);
 })
 
 module.exports=mongoose.connection;

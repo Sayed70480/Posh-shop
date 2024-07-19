@@ -1,9 +1,31 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const ownerModel = require("../Models/Owner-Model");
 
-router.get("/" , function(req , res){
-    res.send("owners")
-})
+if (process.env.NODE_ENV === "development") {
+  router.post("/create", async function (req, res) {
+    try {
+      let owners = await ownerModel.find();
+      if (owners.length > 0) {
+        return res.status(503).send("You don't have Permission to create a new owner");
+      } else {
+        const { fullname, email, password } = req.body;
+        const createdOwner = await ownerModel.create({
+          fullname,
+          email,
+          password,
+        });
+        return res.status(201).send(createdOwner);
+      }
+    } catch (error) {
+      console.error(error);
+      return res.status(500).send("Internal Server Error");
+    }
+  });
+}
 
+router.get("/", function (req, res) {
+  res.send("wow");
+});
 
-module.exports = router
+module.exports = router;
