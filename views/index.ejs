@@ -9,6 +9,13 @@
   </head>
   <body>
     <div class="main-container p-2">
+      
+        <% if(error.length > 0) { %>
+          <div class="absolute top-4 left-[40%] bg-red-400 p-2 rounded-lg text-white font-bold ">
+            <h2><%= error %></h2>  
+          </div>
+        <% } %>
+   
       <!-- logo -->
       <div>
         <h2 class="text-2xl text-blue-600 font-bold">Posh Shop</h2>
@@ -34,12 +41,11 @@
               create your account
             </h4>
             <!-- registration form -->
-            <form action="/register" method="post">
+            <form autocomplete="off" action="/users/register" method="post">
               <div class="mt-2">
                 <input
                   type="text"
-                  name="full name"
-                  autocomplete="family-name"
+                  name="fullname"
                   placeholder="Full name"
                   class="w-full rounded-md bg-gray-100  p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
                 />
@@ -49,7 +55,6 @@
                   type="email"
                   name="email"
                   placeholder="Email"
-                  autocomplete="email"
                   class="w-full rounded-md bg-gray-100 p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -57,7 +62,6 @@
                 <input
                   type="password"
                   name="password"
-                  autocomplete="family-name"
                   placeholder="Password"
                   class="w-full rounded-md bg-gray-100 p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
                 />
@@ -92,7 +96,7 @@
               Login Your Account
             </h2>
             <!-- login form -->
-            <form action="">
+            <form  action="/users/login" method="post">
               <div class="mt-2">
                 <input
                   type="email"
@@ -106,7 +110,7 @@
                 <input
                   type="password"
                   name="password"
-                  autocomplete="family-name"
+                  autocomplete="password"
                   placeholder="Password"
                   class="w-full rounded-md bg-gray-100 p-1.5 text-gray-900 shadow-sm placeholder:text-grey-400 sm:text-sm sm:leading-6"
                 />

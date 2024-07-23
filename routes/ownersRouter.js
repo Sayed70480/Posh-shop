@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "development") {
   });
 }
 
-router.get("/", function (req, res) {
+router.get("/admin", function (req, res) {
   res.send("wow");
 });
 

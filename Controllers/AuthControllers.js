@@ -19,13 +19,15 @@ module.exports.registerUser = async (req ,res) =>{
                             password : hash,
                           });
                         const token = generateJwtToken(createUser)
-                          res.cookie("token", token)
-                          return res.status(201).send("user created successfully");
+                          res.cookie("token", token);
+                          req.flash("error" , "Now you can login")
+                          return res.status(201).redirect("/");
                     }
                 });
             });
            }else{
-            return res.status(401).send("you already registered")
+            req.flash("error","You already have account, please login")
+            res.redirect("/")
            }
       
         
@@ -43,14 +45,21 @@ module.exports.loginuser=async (req ,res) =>{
            if(result){
             let token = generateJwtToken(user);
             res.cookie("token" , token)
-            res.send("you can login")
+          res.redirect("/shop")
            }
         });
     }else{
-        return res.status(503).send("email and password incorrect")
+        req.flash("error" , "email and password incorrect" )
+        res.redirect("/")
     }
    } catch (error) {
     res.send(error);
    }
     
+}
+
+module.exports.logoutuser= async (req , res) =>{
+    res.cookie("token" , "");
+    res.redirect("/")
+
 }
